@@ -25,7 +25,7 @@ export class BasicExampleLoadService {
   }
 
   protected generateData(): Array<any> {
-    const data = [];
+    const data: any[] = [];
     for (let i = 0; i < BasicExampleLoadService.DATA_SIZE; i++) {
       data.push(this.getNewExampleObj(i));
     }

@@ -40,7 +40,10 @@ export class CustomServerDataSource extends LocalDataSource {
     return this.http.get(url, { observe: 'response' })
       .pipe(
         map(res => {
-          this.lastRequestCount = +res.headers.get('x-total-count');
+          const totalCount = res.headers.get('x-total-count');
+          if (totalCount) {
+            this.lastRequestCount = +totalCount;
+          }
           return res.body;
         })
       ).toPromise();

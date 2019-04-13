@@ -13,7 +13,7 @@ export class Row {
     this.process();
   }
 
-  getCell(column: Column): Cell {
+  getCell(column: Column): Cell | undefined {
     return this.cells.find(el => el.getColumn() === column);
   }
 

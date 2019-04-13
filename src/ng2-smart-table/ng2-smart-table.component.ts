@@ -198,7 +198,7 @@ export class Ng2SmartTableComponent implements OnChanges {
     });
   }
 
-  private emitSelectRow(row: Row) {
+  private emitSelectRow(row: Row | null) {
     this.rowSelect.emit({
       data: row ? row.getData() : null,
       isSelected: row ? row.getIsSelected() : null,

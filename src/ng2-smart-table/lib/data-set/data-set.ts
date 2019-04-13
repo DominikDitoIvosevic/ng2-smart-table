@@ -39,7 +39,7 @@ export class DataSet {
     return this.rows[this.rows.length - 1];
   }
 
-  findRowByData(data: any): Row {
+  findRowByData(data: any): Row | undefined {
     return this.rows.find((row: Row) => row.getData() === data);
   }
 

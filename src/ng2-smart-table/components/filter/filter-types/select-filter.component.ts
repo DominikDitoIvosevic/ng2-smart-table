@@ -28,12 +28,14 @@ export class SelectFilterComponent extends DefaultFilter implements OnInit {
   }
 
   ngOnInit() {
-    this.inputControl.valueChanges
-      .pipe(
-        skip(1),
-        distinctUntilChanged(),
-        debounceTime(this.delay)
-      )
-      .subscribe((_: string) => this.setFilter());
+    if (this.inputControl.valueChanges) {
+      this.inputControl.valueChanges
+        .pipe(
+          skip(1),
+          distinctUntilChanged(),
+          debounceTime(this.delay)
+        )
+        .subscribe((_: string) => this.setFilter());
+    }
   }
 }

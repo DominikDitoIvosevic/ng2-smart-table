@@ -63,7 +63,9 @@ export class Grid {
 
     this.source.onUpdated().subscribe((data: any) => {
       const changedRow = this.dataSet.findRowByData(data);
-      changedRow.setData(data);
+      if (data && changedRow) {
+        changedRow.setData(data);
+      }
     });
   }
 
