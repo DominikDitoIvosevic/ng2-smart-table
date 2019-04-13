@@ -7,8 +7,7 @@
   "typings": "./index.d.ts",
   "author": "akveo",
   "license": "MIT",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+http://akveo.github.io/ng2-smart-table.git"
@@ -28,8 +27,8 @@
   },
   "peerDependencies": {
     "ng2-completer": "^2.0.8",
-    "@angular/common": "^7.2.12",
+    "@angular/common": "7.2.13",
     "@angular/core": "7.2.13",
-    "@angular/forms": "^7.2.12"
+    "@angular/forms": "7.2.13"
   }
 }
