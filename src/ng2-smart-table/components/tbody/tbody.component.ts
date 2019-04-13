@@ -39,6 +39,11 @@ export class Ng2SmartTableTbodyComponent {
   isActionDelete: boolean;
   noDataMessage: boolean;
 
+  colNumber() {
+    return this.grid.getColumns().length + 
+      ((this.isActionAdd || this.isActionEdit || this.isActionDelete) ? 1 : 0)
+  }
+
   ngOnChanges() {
     this.isMultiSelectVisible = this.grid.isMultiSelectVisible()
     this.showActionColumnLeft = this.grid.showActionColumn('left');

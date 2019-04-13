@@ -19,5 +19,9 @@
     "plugins": [
       { "name": "tslint-language-service"}
     ]
-  }
+  },
+  
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+  },
 }
