@@ -5,13 +5,7 @@ import { Row } from './row';
 export class Cell {
 
   newValue: any = '';
-  private static _PREPARE = (value: any) => value;
-  protected static get PREPARE() {
-    return Cell._PREPARE;
-  }
-  protected static set PREPARE(value) {
-    Cell._PREPARE = value;
-  }
+  protected PREPARE = (value: any) => value;
 
   constructor(protected value: any, protected row: Row, protected column: any, protected dataSet: DataSet) {
     this.newValue = value;
@@ -27,7 +21,7 @@ export class Cell {
 
   getValue(): any {
     const valid = this.column.getValuePrepareFunction() instanceof Function;
-    const prepare = valid ? this.column.getValuePrepareFunction() : Cell.PREPARE;
+    const prepare = valid ? this.column.getValuePrepareFunction() : this.PREPARE;
     return prepare.call(null, this.value, this.row.getData(), this);
   }
 
