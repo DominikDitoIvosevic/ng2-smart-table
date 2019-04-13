@@ -222,7 +222,8 @@ export class Grid {
       // we have to store which one to select as the data will be reloaded
       this.dataSet.willSelectFirstRow();
     }
-    return null;
+
+    return this.dataSet.select();
   }
 
   prepareSource(source: any): DataSource {

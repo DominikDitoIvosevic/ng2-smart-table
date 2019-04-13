@@ -73,22 +73,22 @@ export class DataSet {
         index = this.rows.length - 1;
       }
       this.selectRow(this.rows[index]);
-      return this.selectedRow;
     }
+    return this.selectedRow;
   }
 
   selectFirstRow(): Row {
     if (this.rows.length > 0) {
       this.selectRow(this.rows[0]);
-      return this.selectedRow;
     }
+    return this.selectedRow;
   }
 
   selectLastRow(): Row {
     if (this.rows.length > 0) {
       this.selectRow(this.rows[this.rows.length - 1]);
-      return this.selectedRow;
     }
+    return this.selectedRow;
   }
 
   willSelectFirstRow() {
@@ -101,7 +101,7 @@ export class DataSet {
 
   select(): Row {
     if (this.getRows().length === 0) {
-      return;
+      return this.selectedRow;
     }
     if (this.willSelect) {
       if (this.willSelect === 'first') {
